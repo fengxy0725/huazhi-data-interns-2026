@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>华智 AI · 数采实习生招募</title>
 <meta name="description" content="加入华智 AI 数采实习：走进真实场景，参与数据采集与质量检查，用每一次认真操作，帮助机器人理解真实世界。">
-<meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#e9f5ff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261101-equipment">
+<meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#e9f5ff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261101-content-controls">
 </head>
 <body>
 <a class="skip-link" href="#about">跳到主要内容</a>
@@ -24,10 +24,10 @@
     <p class="identity-summary"><strong>华智（无锡）人工智能科技有限公司</strong>（简称“华智AI”），是无锡数据集团布局人工智能赛道、发展 AI 核心业务的<strong>关键承载平台</strong>，同时也是无锡（华为云）人工智能创新中心的<strong>运营主体</strong>。公司聚焦工业场景，开展具身数据服务和应用落地两块核心业务，致力于打造数据与应用双轮驱动的具身智能自进化闭环。</p>
     <div class="identity-layout">
       <figure class="identity-strategy">
-        <a href="company-strategy.png" target="_blank" rel="noopener" aria-label="在新窗口查看公司战略图原图">
+        <button type="button" class="strategy-open" aria-label="放大查看公司战略图" aria-haspopup="dialog" aria-controls="strategy-viewer">
           <img src="company-strategy.png" width="926" height="452" loading="lazy" alt="华智AI公司战略图，从场景需求出发，连接数据、模型、本体与应用，并将反馈数据用于下一轮迭代。">
-          <span class="strategy-caption"><strong>公司战略图</strong><span>查看原图 <i aria-hidden="true">↗</i></span></span>
-        </a>
+          <span class="strategy-caption"><strong>公司战略图</strong><span>放大查看 <i aria-hidden="true">⤢</i></span></span>
+        </button>
       </figure>
       <article class="identity-people">
         <h3>团队与人才培养</h3>
@@ -84,15 +84,24 @@
 <div class="task-studio" id="tasks">
 <div class="task-heading"><div><p class="eyebrow" lang="en">ACTION DEMO</p><h3>采集动作示例</h3></div></div>
 <figure class="action-film">
-  <video controls playsinline webkit-playsinline preload="none" poster="action-demo-cover.webp" width="960" height="540" aria-label="佩戴双手采集装置叠毛巾的动作示范" aria-describedby="film-description">
-    <source src="action-demo.mp4" type="video/mp4">
-    <a href="action-demo.mp4">观看叠毛巾演示视频</a>
-  </video>
+  <div class="film-player">
+    <video controls controlslist="nodownload" playsinline webkit-playsinline preload="metadata" poster="action-demo-cover.webp" width="960" height="540" aria-label="佩戴双手采集装置叠毛巾的动作示范" aria-describedby="film-description">
+      <source src="action-demo.mp4" type="video/mp4">
+      当前浏览器不支持播放此视频。
+    </video>
+    <div class="film-controls" role="group" aria-label="视频播放控制" hidden>
+      <button type="button" data-film-play>播放</button>
+      <input type="range" data-film-seek min="0" max="1" step="0.1" value="0" aria-label="视频进度" disabled>
+      <span data-film-time>0:00</span>
+      <button type="button" data-film-mute>静音</button>
+      <button type="button" data-film-full hidden>全屏</button>
+    </div>
+    <p class="film-status" role="status" hidden></p>
+  </div>
   <figcaption>
     <p class="film-label">现场演示 <span>约 48 秒</span></p>
     <h4>用双手采集装置叠毛巾</h4>
     <p id="film-description">演示者佩戴双手采集装置完成折叠。留意双手接触毛巾的位置，以及手机画面里能否看清完整动作。</p>
-    <a href="action-demo.mp4" target="_blank" rel="noopener">单独打开视频 <span aria-hidden="true">↗</span></a>
   </figcaption>
 </figure>
 <p class="task-prompt">点选一个动作，看看采集时要关注什么。</p>
@@ -205,8 +214,13 @@
 <section class="join section chapter" tabindex="-1" id="join" data-title="加入我们"><div class="wrap"><div class="join-banner"><img src="join.webp" alt="奔跑的机器人" loading="lazy"><div class="join-banner-copy"><p class="eyebrow">05 / YOUR NEXT MOVE</p><h2>超前一步，<br>抓住世界。</h2><p>数采实习生招募 · 期待你的加入</p><button class="button light" data-apply>登记实习意向 <span aria-hidden="true">↗</span></button></div></div><div class="share-strip" hidden><div><p class="eyebrow">TAKE IT WITH YOU</p><h3>把这一站，带在身边。</h3><p>扫码打开介绍网页，慢慢了解这份实习。</p></div><button class="website-qr-button" id="share-open" aria-label="放大网页访问二维码"><img data-site-qr alt="扫码访问华智 AI 数采实习生招聘网页"><span>扫码浏览网页 ↗</span></button></div><div class="join-info"><div><h3>加入，从一次交流开始。</h3><p>扫码登记意向 → 招募沟通 → 了解具体安排</p><p class="fineprint">地点、周期、出勤与补贴，以招聘沟通确认为准。</p></div><button class="qr-mini" data-apply aria-label="放大实习生招募意向登记二维码"><img src="apply-qr.png" alt="实习生招募意向登记表二维码"><span>手机扫码<br><b>意向登记 ↗</b></span></button></div><div class="faq"><details><summary>没有相关经验，应该从哪里开始？<span>+</span></summary><p>你可以先了解任务要求、练习基础操作，再在反馈中逐步提升。具体岗位要求请与现场招募人员沟通。</p></details><details><summary>数据采集，是把动作录下来就够了吗？<span>+</span></summary><p>还要让关键交互清楚、任务过程完整，并按规范记录结果。遇到遮挡、异常或任务失败，需要反馈、补采或按用途分类。</p></details><details><summary>在哪里实习？补贴和时间如何安排？<span>+</span></summary><p>请扫码登记意向，或直接咨询现场招募人员，确认实习地点、周期、出勤要求和补贴标准。</p></details></div></div></section>
 </main>
 <footer class="wrap"><a class="brand footer-brand" href="#home"><img src="logo.webp" alt="华智 AI"></a><p>让每一次采集，都有价值。</p><span>2026 CAMPUS RECRUITMENT</span></footer>
-<dialog id="apply-dialog" aria-labelledby="apply-title"><button class="dialog-close" aria-label="关闭报名窗口">×</button><p class="eyebrow">YOUR NEXT MOVE</p><h2 id="apply-title">下一站，华智 AI。</h2><p>实习生招募意向登记表</p><div class="apply-options"><img class="apply-qr" src="apply-qr.png" alt="扫码打开华智 AI 实习生招募意向登记表"><p class="scan-note">使用手机扫码，填写报名信息</p><a id="apply-form-link" class="button" href="#" target="_blank" rel="noopener noreferrer" hidden>填写意向登记 ↗</a></div><p class="fineprint">扫码或打开链接后，由你在原登记表中提交信息。</p></dialog>
+<dialog id="apply-dialog" aria-labelledby="apply-title"><button class="dialog-close" aria-label="关闭报名窗口">×</button><p class="eyebrow">YOUR NEXT MOVE</p><h2 id="apply-title">下一站，华智 AI。</h2><p>实习生招募意向登记表</p><div class="apply-options"><img class="apply-qr" src="apply-qr.png" alt="扫码打开华智 AI 实习生招募意向登记表"><p class="scan-note">现场可扫码报名；已在手机上打开，可点下方按钮直接填写。</p><a id="apply-form-link" class="button" href="#" target="_blank" rel="noopener noreferrer" hidden>填写意向登记 ↗</a></div><p class="fineprint">扫码或打开链接后，由你在原登记表中提交信息。</p></dialog>
 <dialog id="share-dialog" aria-labelledby="share-title"><button class="dialog-close" id="share-close" aria-label="关闭网页二维码">×</button><p class="eyebrow">SCAN TO EXPLORE</p><h2 id="share-title">扫码，认识这份实习。</h2><p>华智 AI · 数采实习生招募</p><img class="apply-qr" data-site-qr alt="网页访问二维码"><p class="scan-note">扫码在手机浏览完整介绍</p><button class="button" id="copy-site-link">复制网页链接 ↗</button></dialog><div class="present-controls" hidden><button id="chapter-prev" aria-label="上一节">←</button><span id="chapter-label">01 / 09</span><button id="chapter-next" aria-label="下一节">→</button><button id="present-exit" aria-label="退出演示">退出 ⛶</button></div><div class="toast" role="status" hidden></div>
 <nav class="mobile-dock" aria-label="手机快捷导航"><a href="#journey">认识数采</a><a href="#growth">成长路线</a><a href="#lab">动手试试</a><button data-apply>登记意向 <span aria-hidden="true">↗</span></button></nav>
-<script src="content.js?v=20261030-clean-copy"></script><script src="qrcode.js"></script><script src="app.js?v=20261030"></script><script src="enhancements.js?v=20261101-equipment"></script>
+<dialog id="strategy-viewer" aria-labelledby="strategy-viewer-title">
+  <div class="strategy-viewer-bar"><h2 id="strategy-viewer-title">公司战略图</h2><form method="dialog"><button type="submit" aria-label="关闭公司战略图" autofocus>关闭</button></form></div>
+  <div class="strategy-viewer-image" tabindex="0" role="region" aria-label="公司战略图大图，可横向滚动"><img src="company-strategy.png" width="926" height="452" loading="lazy" alt="数据与应用双轮驱动的具身智能自进化闭环。"></div>
+</dialog>
+<script src="content.js?v=20261030-clean-copy"></script><script src="qrcode.js"></script><script src="app.js?v=20261101-content-controls"></script><script src="enhancements.js?v=20261101-content-controls"></script>
+<script src="video-player.js?v=20261101-content-controls"></script>
 </body></html>

@@ -1,4 +1,21 @@
 'use strict';
+function protectDisplayedContent(event) {
+  const target = event.target;
+  if (target instanceof Element && (target.closest('input, textarea') || target.isContentEditable)) return;
+  event.preventDefault();
+}
+document.addEventListener('copy', protectDisplayedContent);
+document.addEventListener('selectstart', protectDisplayedContent);
+
+const displayedMedia = 'img, video, svg[role="img"], .equipment-art, .hero-art, .identity-strategy, .strategy-viewer-image';
+function preventMediaAction(event) {
+  if (event.target instanceof Element && event.target.closest(displayedMedia)) event.preventDefault();
+}
+document.addEventListener('contextmenu', preventMediaAction);
+document.addEventListener('dragstart', preventMediaAction);
+
+const strategyViewer = document.getElementById('strategy-viewer');
+document.querySelector('.strategy-open').addEventListener('click', () => strategyViewer.showModal());
 // Action types are from the supplied brochure (page 5).
 // The descriptions below are recruitment illustrations, not production SOPs.
 const TASKS = {

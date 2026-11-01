@@ -40,7 +40,7 @@ function jumpChapter(delta){activeChapter=Math.max(0,Math.min(chapters.length-1,
 async function setPresentation(value){presenting=value;document.body.classList.toggle('presenting',value);$('.present-controls').hidden=!value;$('#present-toggle').setAttribute('aria-pressed',String(value));$('.present-label').textContent=value?'退出演示':'现场演示';$('#present-toggle').setAttribute('aria-label',value?'退出演示':'现场演示');if(value){try{if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else toast('演示模式已开启，使用底部按钮或左右方向键切换章节。')}catch{toast('演示模式已开启，使用底部按钮或左右方向键切换章节。')}chapters[activeChapter].scrollIntoView({behavior:'instant'});chapters[activeChapter].focus({preventScroll:true});}else if(document.fullscreenElement){try{await document.exitFullscreen()}catch{}}updateChapter()}
 $('#present-toggle').addEventListener('click',()=>setPresentation(!presenting));$('#present-exit').addEventListener('click',()=>setPresentation(false));$('#chapter-prev').addEventListener('click',()=>jumpChapter(-1));$('#chapter-next').addEventListener('click',()=>jumpChapter(1));
 document.addEventListener('keydown',e=>{
-  if(!presenting||dialog.open||$('#share-dialog').open||e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(!presenting||document.querySelector('dialog[open]')||e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey)return;
   if(e.target.closest('input,textarea,select')||e.target.isContentEditable)return;
   if(e.key==='PageDown'||e.key==='PageUp'){
     e.preventDefault();
@@ -72,4 +72,24 @@ const shareDialog=$('#share-dialog');let shareFocus=null;
 $('#share-open').addEventListener('click',()=>{shareFocus=document.activeElement;shareDialog.showModal();$('#share-close').focus()});
 $('#share-close').addEventListener('click',()=>shareDialog.close());shareDialog.addEventListener('close',()=>shareFocus?.focus());
 shareDialog.addEventListener('click',e=>{if(e.target!==shareDialog)return;const r=shareDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)shareDialog.close()});
-$('#copy-site-link').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(siteUrl);$('#copy-site-link').textContent='链接已复制 ✓';setTimeout(()=>$('#copy-site-link').textContent='复制网页链接 ↗',2500)}catch{$('#copy-site-link').textContent=siteUrl}});
+$('#copy-site-link').addEventListener('click',async()=>{
+  const button = $('#copy-site-link');
+  try {
+    await navigator.clipboard.writeText(siteUrl);
+    button.textContent = '链接已复制 ✓';
+    setTimeout(()=>button.textContent='复制网页链接 ↗',2500);
+  } catch {
+    let field = $('#share-url');
+    if (!field) {
+      field = document.createElement('input');
+      field.id = 'share-url';
+      field.type = 'url';
+      field.readOnly = true;
+      field.value = siteUrl;
+      field.setAttribute('aria-label','网页分享链接');
+      button.after(field);
+    }
+    field.focus();
+    field.select();
+  }
+});
