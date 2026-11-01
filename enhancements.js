@@ -37,3 +37,22 @@ const dockObserver=new IntersectionObserver(entries=>{
   });
 },{rootMargin:'-15% 0px -55% 0px',threshold:0});
 document.querySelectorAll('.chapter').forEach(section=>dockObserver.observe(section));
+
+const deviceSelector = document.querySelector('.equipment-selector');
+const deviceTabs = Array.from(deviceSelector.querySelectorAll('[data-equip-tab]'));
+
+function showDevice(selectedTab) {
+  for (const tab of deviceTabs) {
+    const active = tab === selectedTab;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+  }
+}
+
+for (const tab of deviceTabs) {
+  tab.addEventListener('click', () => showDevice(tab));
+}
+deviceSelector.addEventListener('keydown', event => tabKeyboard(event, '[data-equip-tab]', showDevice));
+showDevice(deviceTabs[0]);
+deviceSelector.hidden = false;
