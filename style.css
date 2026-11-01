@@ -63,3 +63,50 @@
   .mission-role ol { margin-block: 14px 0; }
 }
 @media print { .mission-role { break-inside: avoid; } }
+
+/* Field team introduction and recorded task demonstration. */
+/* Company profile, strategy artwork and office directions. */
+.identity { padding: clamp(42px, 5vw, 76px) 0; background: linear-gradient(155deg, #fff 12%, #eef7ff); color: var(--ink); border-bottom: 1px solid var(--line); }
+.identity-heading { margin-bottom: 18px; }
+.identity-heading .eyebrow { margin: 0 0 10px; color: #47799c; }
+.identity-heading h2 { font-size: clamp(27px, 3vw, 42px); line-height: 1.35; }
+.identity-heading h2 span { display: inline-block; color: #205d94; }
+.identity-summary { max-width: 78em; margin: 0 0 24px; font-size: 16px; line-height: 1.85; }
+.identity-summary strong, .identity-people strong { color: #174f86; }
+.identity-layout, .identity-footer { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); }
+.identity-layout { align-items: start; }
+.identity-strategy { margin: 0; border: 1px solid var(--line); border-radius: 16px; background: white; overflow: hidden; }
+.identity-strategy a { display: block; cursor: zoom-in; }
+.identity-strategy a:focus-visible { outline-offset: -4px; }
+.identity-strategy img { width: 100%; height: auto; }
+.strategy-caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--line); color: #355572; font-size: 13px; }
+.strategy-caption span, .location-link { color: #165e9b; }
+.strategy-caption i { font-style: normal; }
+.identity h3 { margin: 0 0 9px; font-size: 20px; line-height: 1.5; }
+.identity-people p, .identity-department p, .company-location address { margin: 0; color: #465e77; font-size: 15px; line-height: 1.85; }
+.identity-people p + p { margin-top: 12px; }
+.identity-footer { margin-top: 24px; align-items: stretch; }
+.identity-department, .company-location { padding: 20px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.company-location h3 { display: flex; gap: 8px; align-items: center; }
+.company-location svg { color: #246ba3; }
+.company-location address { font-style: normal; }
+.location-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 5px; font-size: 14px; font-weight: 600; }
+.location-link:hover, .identity-strategy a:hover .strategy-caption span { text-decoration: underline; text-underline-offset: 4px; }
+.action-film { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); margin: 0 0 28px; background: #eef6fd; border: 1px solid #d8e5f1; border-radius: 18px; overflow: hidden; }
+.action-film video { display: block; align-self: center; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #102234; }
+.action-film figcaption { align-self: center; padding: clamp(18px, 2.5vw, 34px); }
+.action-film .film-label { margin: 0 0 10px; color: #285e87; font-size: 12px; font-weight: 600; }
+.film-label span { margin-left: 8px; padding-left: 9px; border-left: 1px solid #9fbacf; }
+.action-film h4 { margin: 0 0 10px; font-size: clamp(21px, 2vw, 27px); }
+.action-film #film-description { margin: 0; color: #506579; font-size: 14px; line-height: 1.8; }
+.action-film a { display: inline-flex; align-items: center; min-height: 44px; gap: 9px; margin-top: 5px; color: #1a62a0; font-size: 14px; font-weight: 600; }
+.action-film a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.task-prompt { margin: 0 0 14px; font-size: 14px; color: #506579; }
+@media (max-width: 760px) {
+  .identity-heading h2 span { display: block; margin-top: 4px; }
+  .identity-layout, .identity-footer, .action-film { grid-template-columns: minmax(0, 1fr); }
+  .identity-summary, .identity-people p, .identity-department p { font-size: 14px; }
+  .identity-footer { gap: 16px; margin-top: 20px; }
+  .identity-department, .company-location { padding: 18px; }
+  .action-film figcaption { padding: 20px; }
+}
