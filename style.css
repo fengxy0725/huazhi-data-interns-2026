@@ -104,6 +104,12 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { -webkit-user
 #share-url { display: block; width: 100%; margin-top: 12px; padding: 8px; font: inherit; font-size: 14px; }
 img, video, svg[role="img"], .strategy-open, .equipment-art, .hero-art { -webkit-touch-callout: none; }
 img { pointer-events: none; -webkit-user-drag: none; }
+.stories-heading { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; margin: 32px 0 18px; }
+.stories-heading .eyebrow { margin: 0 0 7px; }
+.stories-heading h3 { margin: 0; font-size: clamp(22px, 3vw, 32px); }
+.stories-heading nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.stories-heading nav a { display: inline-flex; align-items: center; min-height: 44px; color: #215987; font-size: 14px; font-weight: 600; }
+.stories-heading nav a:hover { text-decoration: underline; }
 .action-film { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); margin: 0 0 28px; background: #eef6fd; border: 1px solid #d8e5f1; border-radius: 18px; overflow: hidden; }
 .action-film video { display: block; align-self: center; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #102234; }
 .action-film figcaption { align-self: center; padding: clamp(18px, 2.5vw, 34px); }
