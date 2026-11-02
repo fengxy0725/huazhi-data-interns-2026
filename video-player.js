@@ -1,8 +1,8 @@
 'use strict';
 
-(() => {
-  const player = document.querySelector('.film-player');
-  const video = player.querySelector('video');
+const recruitmentVideos = document.querySelectorAll('.film-player video');
+recruitmentVideos.forEach(video => {
+  const player = video.closest('.film-player');
   const controls = player.querySelector('.film-controls');
   const play = controls.querySelector('[data-film-play]');
   const seek = controls.querySelector('[data-film-seek]');
@@ -47,7 +47,14 @@
     }
   }
 
-  video.addEventListener('play', () => { play.textContent = '暂停'; status.hidden = true; });
+  video.addEventListener('play', () => {
+    if (video.paused) return;
+    for (const other of recruitmentVideos) {
+      if (other !== video && !other.paused) other.pause();
+    }
+    play.textContent = '暂停';
+    status.hidden = true;
+  });
   video.addEventListener('pause', () => { play.textContent = '播放'; });
   video.addEventListener('ended', () => { play.textContent = '重播'; });
   video.addEventListener('error', () => showMessage('视频加载失败，点播放可重试。'));
@@ -82,4 +89,4 @@
   updateTime();
   video.controls = false;
   controls.hidden = false;
-})();
+});

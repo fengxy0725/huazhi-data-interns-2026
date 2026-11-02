@@ -109,8 +109,8 @@ img { pointer-events: none; -webkit-user-drag: none; }
 .action-film figcaption { align-self: center; padding: clamp(18px, 2.5vw, 34px); }
 .action-film .film-label { margin: 0 0 10px; color: #285e87; font-size: 12px; font-weight: 600; }
 .film-label span { margin-left: 8px; padding-left: 9px; border-left: 1px solid #9fbacf; }
-.action-film h4 { margin: 0 0 10px; font-size: clamp(21px, 2vw, 27px); }
-.action-film #film-description { margin: 0; color: #506579; font-size: 14px; line-height: 1.8; }
+.action-film figcaption :is(h3, h4) { margin: 0 0 10px; font-size: clamp(21px, 2vw, 27px); }
+.action-film .film-description { margin: 0; color: #506579; font-size: 14px; line-height: 1.8; }
 .film-player { min-width: 0; align-self: center; background: #102234; color: white; }
 .film-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 4px 8px; background: #152d47; }
 .film-controls button { min-height: 44px; padding: 0 8px; border: 0; color: white; background: transparent; border-radius: 6px; font-size: 14px; }
