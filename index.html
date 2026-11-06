@@ -5,6 +5,64 @@
 <title>华智 AI · 数采实习生招募</title>
 <meta name="description" content="加入华智 AI 数采实习：走进真实场景，参与数据采集与质量检查，用每一次认真操作，帮助机器人理解真实世界。">
 <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#e9f5ff"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261102-stories">
+<style>
+#identity-datawheel { margin-top: 24px; border: 1px solid #d9e6f1; border-radius: 16px; background: #fff; overflow: hidden; }
+#identity-datawheel > summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 68px; padding: 18px 24px; color: #174f86; cursor: pointer; list-style: none; }
+#identity-datawheel > summary::-webkit-details-marker { display: none; }
+#identity-datawheel > summary:focus-visible { outline: 3px solid #267bf5; outline-offset: -4px; }
+#identity-datawheel .identity-wheel-label { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 16px; }
+#identity-datawheel .identity-wheel-label strong { font-size: 18px; font-weight: 600; }
+#identity-datawheel .identity-wheel-label span { color: #536c85; font-size: 13px; }
+#identity-datawheel .identity-wheel-mark { flex: none; font-size: 26px; line-height: 1; transition: transform .2s; }
+#identity-datawheel[open] > summary { border-bottom: 1px solid #d9e6f1; }
+#identity-datawheel[open] .identity-wheel-mark { transform: rotate(45deg); }
+@media (max-width: 650px) { #identity-datawheel > summary { padding: 16px 18px; } }
+#hz-datawheel{--ink:#162b45;--muted:#536c85;--blue:#267bf5;--cyan:#37b8ef;--line:#d9e6f1;--paper:#f8fbff;--supp:#205d94;container-type:inline-size;isolation:isolate;color:var(--ink);font:400 16px/1.55 "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:linear-gradient(155deg,#fff 12%,#eef7ff);width:100%;text-align:left;-webkit-text-size-adjust:100%}
+#hz-datawheel *,#hz-datawheel *:before,#hz-datawheel *:after{box-sizing:border-box}
+#hz-datawheel h3,#hz-datawheel h4,#hz-datawheel p{margin:0;color:inherit}
+#hz-datawheel button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+#hz-datawheel button:focus-visible{outline:3px solid #267bf5;outline-offset:3px}
+#hz-datawheel .fw-wrap{max-width:1280px;margin-inline:auto;padding:clamp(16px,2.5cqw,36px) clamp(16px,3.5cqw,52px)}
+#hz-datawheel .fw-header{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+#hz-datawheel .fw-eyebrow{font:bold 10px/1.4 Arial,sans-serif;letter-spacing:2px;color:#47799c;margin:0 0 6px}
+#hz-datawheel h3{font-size:clamp(26px,3cqw,42px);letter-spacing:-.035em;line-height:1.25;font-weight:650}
+#hz-datawheel h3 span{color:#205d94}
+#hz-datawheel .fw-sub{margin-top:6px;font-size:15px;color:#465e77}
+#hz-datawheel .fw-modes{display:inline-flex;padding:4px;border:1px solid var(--line);border-radius:100px;background:#e9f2fc;flex:none}
+#hz-datawheel .fw-modes button{border:0;border-radius:100px;background:transparent;padding:8px 14px;color:#496986;font-size:14px;white-space:nowrap}
+#hz-datawheel .fw-modes [aria-pressed=true]{background:white;color:#1762b7;box-shadow:0 2px 7px #314e7014;font-weight:600}
+#hz-datawheel .fw-main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(14px,2.4cqw,36px);align-items:stretch}
+#hz-datawheel .fw-wheelbox,#hz-datawheel .fw-detail{border:1px solid var(--line);border-radius:16px;background:white;min-width:0}
+#hz-datawheel .fw-wheelbox{position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at 48% 48%,#fff 27%,#f0f8ff 100%);overflow:hidden}
+#hz-datawheel .fw-wheel{width:min(100%,440px);display:block;aspect-ratio:1;overflow:visible}
+#hz-datawheel .fw-wheel text{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+#hz-datawheel .fw-slice{fill:#dfedfd;stroke:white;stroke-width:2;transition:fill .2s}
+#hz-datawheel .fw-slice.active{fill:url(#hzfw-active)}
+#hz-datawheel .fw-tip{fill:#45a5e3}#hz-datawheel .fw-lab .stage{fill:#183d62;font-size:17px;font-weight:600}#hz-datawheel .fw-lab .idx{fill:#51718c;font:600 12px Arial,sans-serif}
+#hz-datawheel .fw-owner,#hz-datawheel .fw-lab .owner{font-size:13px;fill:#365e80}#hz-datawheel .fw-lab.active text{fill:white}
+#hz-datawheel .fw-detail{padding:clamp(16px,2cqw,27px);display:flex;flex-direction:column;gap:10px}
+#hz-datawheel .fw-statebar{display:flex;align-items:center;justify-content:space-between;color:#52728e;font:600 11px Arial,sans-serif;letter-spacing:1.4px}
+#hz-datawheel .fw-toggle{border:1px solid #c4d9ef;background:#fff;border-radius:100px;padding:7px 13px;font-size:13px;color:#205d94;min-height:34px}
+#hz-datawheel .fw-line{height:3px;border-radius:9px;background:#e1edf8;overflow:hidden}#hz-datawheel .fw-line b{display:block;background:linear-gradient(90deg,#267bf5,#37b8ef);height:100%;transform-origin:left}
+#hz-datawheel .fw-stage{color:#47799c;font-size:12px}
+#hz-datawheel .fw-detail h4{font-size:clamp(24px,2.35cqw,34px);font-weight:620;line-height:1.3;letter-spacing:-.02em}
+#hz-datawheel .fw-action{font-size:16px;line-height:1.65;color:#354d66;min-height:3.3em}
+#hz-datawheel .fw-facts{margin:0;display:grid;grid-template-columns:55px minmax(0,1fr);font-size:14px;gap:5px 11px;line-height:1.6}
+#hz-datawheel .fw-facts dt{color:#60778c}#hz-datawheel .fw-facts dd{margin:0;color:#174f86;overflow-wrap:anywhere}
+#hz-datawheel .fw-menu{margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+#hz-datawheel .fw-menutitle{color:#526e88;font-size:12px;margin-bottom:6px}
+#hz-datawheel .fw-nav{display:flex;flex-wrap:wrap;gap:5px}
+#hz-datawheel .fw-nav button{padding:4px 9px;border:1px solid #d9e6f1;border-radius:7px;background:white;color:#40607b;font-size:13px;line-height:1.5}
+#hz-datawheel .fw-nav button[aria-pressed=true]{background:#eaf4ff;border-color:#82b7f5;color:#185cae}
+#hz-datawheel .fw-below{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4cqw,36px);margin-top:14px}
+#hz-datawheel .fw-support{border:1px solid var(--line);border-radius:16px;background:#fff;padding:12px 18px;color:#465e77;font-size:14px;line-height:1.65}
+#hz-datawheel .fw-support strong{font-size:16px;color:#174f86;font-weight:600}
+#hz-datawheel .fw-foot{margin-top:11px;display:flex;justify-content:space-between;color:#526e87;font-size:12px;gap:12px;flex-wrap:wrap}
+#hz-datawheel .fw-hidden{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%)}
+@container(max-width:790px){#hz-datawheel .fw-wrap{padding:18px}#hz-datawheel .fw-header{align-items:start}#hz-datawheel .fw-main{grid-template-columns:minmax(0,.96fr) minmax(0,1fr);gap:12px}#hz-datawheel .fw-sub{font-size:13px}#hz-datawheel .fw-detail{gap:8px}#hz-datawheel .fw-action{font-size:14px}#hz-datawheel .fw-nav button{font-size:12px;padding:5px 7px}#hz-datawheel .fw-modes button{font-size:12px;padding:7px 10px}}
+@container(max-width:620px){#hz-datawheel .fw-header{display:block}#hz-datawheel .fw-modes{margin-top:12px}#hz-datawheel .fw-main,#hz-datawheel .fw-below{grid-template-columns:minmax(0,1fr)}#hz-datawheel .fw-wheel{width:min(90%,390px)}#hz-datawheel .fw-wheelbox{padding-block:6px}#hz-datawheel .fw-wrap{padding:15px 12px}#hz-datawheel .fw-below{gap:8px}#hz-datawheel .fw-detail h4{font-size:24px}#hz-datawheel .fw-action{min-height:0}#hz-datawheel .fw-foot{gap:4px}#hz-datawheel .fw-lab .stage{font-size:19px}#hz-datawheel .fw-lab .idx{font-size:16px}#hz-datawheel .fw-owner,#hz-datawheel .fw-lab .owner{font-size:16px}}
+@media(pointer:coarse){#hz-datawheel .fw-toggle,#hz-datawheel .fw-modes button,#hz-datawheel .fw-nav button{min-height:44px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#about">跳到主要内容</a>
@@ -38,7 +96,8 @@
     <div class="identity-footer">
       <article class="identity-department">
         <h3>具身数据科学部</h3>
-        <p>我们把人的操作示范整理成机器人可以学习的数据。运营团队组织采集任务，培训团队带大家练习设备操作，质检团队核验样本、反馈问题。你会在这些伙伴的支持下，参与数据采集或质量检查。</p>
+        <p>我们让数据沿着一条飞轮持续迭代：定义任务、招募上岗、执行采集、预检纠偏、正式质检、复验放行、训练评测。评测发现的能力缺口，会成为下一轮补采任务。</p>
+        <p>你参与采集或质检，培训师带你练习上岗，运营安排任务、跟进整改；设备与平台工程师保障采集和记录追溯。每个岗位都有清楚的交接。</p>
       </article>
       <section class="company-location" id="location" aria-labelledby="location-title">
         <h3 id="location-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>公司位置</h3>
@@ -46,6 +105,155 @@
         <a class="location-link" href="https://api.map.baidu.com/place/detail?uid=377add8473e5394af4231078&amp;output=html&amp;src=webapp.huazhi.recruit" target="_blank" rel="noopener noreferrer">在百度地图查看 A 栋 <span aria-hidden="true">↗</span></a>
       </section>
     </div>
+    <details id="identity-datawheel">
+      <summary><span class="identity-wheel-label"><strong>数据生产飞轮</strong><span>展开看岗位分工与质量退回</span></span><span class="identity-wheel-mark" aria-hidden="true">＋</span></summary>
+<section id="hz-datawheel" lang="zh-CN" aria-labelledby="datawheel-title">
+<div class="fw-wrap">
+<noscript><p class="fw-sub">生产闭环：定义任务、招募上岗、执行采集、预检纠偏、正式质检、复验放行、训练评测；评测发现的能力缺口用于下一轮补采。启用 JavaScript 后可逐项查看岗位分工和质量退回流程。</p></noscript>
+<header class="fw-header">
+<div><p class="fw-eyebrow" lang="en">HUAZHI AI · DATA OPERATIONS</p><h3 id="datawheel-title">具身智能<span>数据生产飞轮</span></h3><p class="fw-sub">从任务定义到模型评测，用能力缺口决定下一轮补采。</p></div>
+<div class="fw-modes" role="group" aria-label="演示流程"><button type="button" data-mode="main" aria-pressed="true">生产闭环</button><button type="button" data-mode="qa" aria-pressed="false">质量退回</button></div>
+</header>
+<div class="fw-main">
+<div class="fw-wheelbox">
+<svg class="fw-wheel" viewBox="0 0 480 480" role="img" aria-label="由七个岗位环节组成的旋转飞轮，岗位详情在右侧或下方显示。">
+<defs><linearGradient id="hzfw-active" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#186dd7"/><stop offset="1" stop-color="#2183cb"/></linearGradient></defs>
+<g transform="translate(240,240)">
+<circle r="219" fill="none" stroke="#c5dae9"/><g class="fw-ticks"></g><g class="fw-rotor"></g><g class="fw-labels"></g>
+<circle r="101" fill="#f7fbff"/>
+<text y="-20" fill="#183d62" font-size="17" font-weight="600">运营统筹</text><text y="4" class="fw-owner" font-weight="400">数据运营负责人</text><text y="30" fill="#526e88" font-size="12">优先级 · 资源 · 交期</text>
+<path d="M-7,-220 L7,-220 L0,-208 Z" fill="#1e69bc"/>
+</g></svg></div>
+<section class="fw-detail" aria-label="当前岗位与交接">
+<div class="fw-statebar"><span class="fw-count"></span><button class="fw-toggle" type="button" aria-pressed="false">播放</button></div>
+<div class="fw-line"><b></b></div><p class="fw-stage"></p>
+<h4 class="fw-role"></h4><p class="fw-action"></p>
+<dl class="fw-facts"><dt>交付物</dt><dd class="fw-out"></dd><dt>下一站</dt><dd class="fw-next"></dd></dl>
+<div class="fw-menu"><p class="fw-menutitle">选择岗位，暂停查看</p><div class="fw-nav" role="group" aria-label="选取环节"></div></div>
+</section></div>
+<div class="fw-below">
+<div class="fw-support"><strong>设备与采集工程师</strong><br>校准设备、核对同步，处理工位故障并验证复机。</div>
+<div class="fw-support"><strong>数据平台工程师</strong><br>校验入库数据，关联样本编号、质检记录和训练版本。</div>
+</div>
+<div class="fw-foot"><span>具身数据科学部 · 数据运营团队</span></div>
+<div class="fw-hidden" role="status" aria-live="polite"></div>
+</div>
+<script>
+(()=>{
+ const root=document.getElementById('hz-datawheel');
+ if(!root || root.dataset.ready)return;
+ root.dataset.ready='1';
+ const disclosure=root.closest('details');
+ const get=s=>root.querySelector(s),ns='http://www.w3.org/2000/svg';
+ const main=[
+ ['定义任务','数据需求负责人','把模型能力缺口拆成任务、场景配额和验收要求，与需求方确认采集用途。','任务卡与采集配方','培训师按任务要求准备人员。'],
+ ['招募上岗','培训师','按岗位缺口招募成员，组织筛选、试做、培训和复训，与用人岗位确认上岗资格。','可排班名单与首班辅导要求','数采运营派工，数采员按卡执行。'],
+ ['执行采集','数采员','检查工位，按任务卡采集并自查。标明成功、失败或恢复，上传可追溯的记录。','采集记录、任务与设备版本、结果标签','数采运营查收并预检。'],
+ ['预检纠偏','数采运营','排班派工、预检数据，将问题反馈到数采员并跟踪整改。减少等待和返工，提高每工时合格产出。','送检清单、问题证据与整改记录','质检人员按当版规则独立判定。'],
+ ['正式质检','质检人员','按当版规则独立判定受检样本，标出问题帧、对应规则和证据，提交争议项。','样本判定与缺陷证据','质检运营安排复核、隔离或放行。'],
+ ['复验放行','质检运营','组织抽检与复验，签署批次放行结论。优化派单和回放用时，用独立复核检查误放、误退。','批次放行清单、隔离范围与版本','数采运营按清单交付，验收后的数据版本进入训练。'],
+ ['训练评测','算法评测负责人','按版本训练，在独立场景评测技能表现，记录改善和仍存在的能力缺口。','评测结果与下一轮补采建议','数据需求负责人调整配方，回到任务定义。']
+ ];
+ const qa=[
+ ['正式退回','质检人员','定位缺失的起始画面，关联记录编号、问题帧与当版规则，提交退回依据。','退回记录与对应证据','数采运营接单并反馈到人。'],
+ ['反馈到人','数采运营','将问题帧、具体改法和提交时限反馈给数采员。重复的操作问题请培训师协助带练。','整改要求、负责人和截止时间','数采员执行整改或补采。'],
+ ['整改补采','数采员','按反馈完成同类任务，保留原记录，并把新样本与原编号关联。','带新旧关联的整改记录','数采运营重新预检。'],
+ ['预检再送','数采运营','回看新样本的起止、关键画面与必填信息，将原缺陷证据和整改结果一起送检。','复验清单及整改证据','质量岗按原判据复验。'],
+ ['正式复验','质检运营','安排质检员独立复验。此处演示复验通过的批次，签署放行结论，返回生产主线。','复验记录与批次处置结论','数采运营按放行清单交付。']
+ ];
+ const flows={main,qa},sec=5.2,reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ let mode='main',phase=0,play=false,prior=null,shown=-1,raf=0,labels=[],slices=[],buttons=[];
+ const rotor=get('.fw-rotor'),labelRoot=get('.fw-labels'),nav=get('.fw-nav');
+ const mod=(v,n)=>((v%n)+n)%n;
+ const pos=(r,a)=>[r*Math.cos(a*Math.PI/180),r*Math.sin(a*Math.PI/180)];
+ function svg(tag,attrs,parent,txt){
+  const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);
+  if(txt!==undefined)e.textContent=txt;parent.appendChild(e);return e;
+ }
+ function shape(a,b){
+  const p=(r,t)=>pos(r,t).map(n=>n.toFixed(3)).join(' ');
+  return 'M '+p(199,a)+' A199 199 0 0 1 '+p(199,b)+' L '+p(155,b+4.3)+' L '+p(111,b)+' A111 111 0 0 0 '+p(111,a)+' L '+p(155,a+4.3)+' Z';
+ }
+ const ticks=get('.fw-ticks');
+ for(let i=0;i<84;i++){const a=i*360/84,p=pos(i%4?213:209,a),q=pos(217,a);svg('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:i%4?'#d0e0ec':'#7ea6c8','stroke-width':i%4?1:1.6},ticks)}
+ function build(){
+  shown=-1; prior=null;rotor.replaceChildren();labelRoot.replaceChildren();nav.replaceChildren();
+  slices=[];labels=[];buttons=[];
+  const data=flows[mode],step=360/data.length;
+  data.forEach((item,i)=>{
+   const a=-90-i*step;
+   slices.push(svg('path',{d:shape(a-step/2+1,a+step/2-1),class:'fw-slice'},rotor));
+   const lab=svg('g',{class:'fw-lab'},labelRoot);labels.push(lab);
+   svg('text',{y:-22,class:'idx'},lab,String(i+1).padStart(2,'0'));
+   svg('text',{y:0,class:'stage'},lab,item[0]);
+   svg('text',{y:22,class:'owner'},lab,item[1].replace('数据需求负责人','数据需求').replace('算法评测负责人','算法评测'));
+   const btn=document.createElement('button');btn.type='button';
+   btn.textContent=mode==='qa'?item[0]:item[1];btn.setAttribute('aria-label','查看'+item[0]+'，'+item[1]);
+   btn.addEventListener('click',()=>{phase=i;play=false;prior=null;render();schedule();save();status('已暂停，'+item[0]+'，'+item[1])});
+   nav.appendChild(btn);buttons.push(btn);
+  });
+  get('.fw-wheel').setAttribute('aria-label',mode==='main'?'生产飞轮包含七个环节，可选择下方岗位查看详情，或播放动画。':'质量退回流程，依次演示退回、反馈、整改、预检与复验。');
+  root.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+  render();
+ }
+ const status=t=>{get('[role=status]').textContent=t};
+ function render(){
+  const data=flows[mode],n=data.length,step=360/n,deg=phase*step,idx=mod(Math.floor(phase+.5),n);
+  rotor.setAttribute('transform','rotate('+deg.toFixed(3)+')');
+  labels.forEach((g,i)=>{const [x,y]=pos(156,-90-i*step+deg);g.setAttribute('transform','translate('+x.toFixed(3)+' '+y.toFixed(3)+')')});
+  if(shown!==idx){
+   const item=data[idx];shown=idx;
+   slices.forEach((e,i)=>e.classList.toggle('active',i===idx));labels.forEach((e,i)=>e.classList.toggle('active',i===idx));
+   buttons.forEach((e,i)=>e.setAttribute('aria-pressed',String(i===idx)));
+   get('.fw-count').textContent=(mode==='main'?'PRODUCTION':'QUALITY REVIEW')+'   '+String(idx+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
+   get('.fw-stage').textContent=item[0];get('.fw-role').textContent=item[1];get('.fw-action').textContent=item[2];get('.fw-out').textContent=item[3];get('.fw-next').textContent=item[4];
+   get('.fw-line b').style.transform='scaleX('+((idx+1)/n)+')';
+  }
+  const toggle=get('.fw-toggle');const label=play?'暂停':'播放';
+  if(toggle.textContent!==label)toggle.textContent=label;
+  toggle.setAttribute('aria-label',play?'暂停轮盘转动':'播放轮盘动画');
+  toggle.setAttribute('aria-pressed',String(play));
+ }
+ function schedule(){
+  if(raf)cancelAnimationFrame(raf);
+  raf=0;
+  if(play&&disclosure.open&&!document.hidden&&root.isConnected)raf=requestAnimationFrame(frame);
+ }
+ function frame(now){
+  raf=0;if(!play||!disclosure.open||document.hidden||!root.isConnected){prior=null;return}
+  const delta=prior===null?0:Math.min((now-prior)/1000,.15);
+  prior=now;phase+=delta/sec;
+  if(mode==='qa'&&phase>=qa.length-.5){mode='main';phase=5;build()}
+  else phase=mod(phase,flows[mode].length);
+  render();raf=requestAnimationFrame(frame);
+ }
+ function save(){
+  const w=window.openai;if(!w?.setWidgetState)return;
+  Promise.resolve(w.setWidgetState({modelContent:{mode,step:shown+1,playing:play},privateContent:{phase}})).catch(()=>{});
+ }
+ function restored(state){
+  const m=state?.modelContent,s=state?.privateContent;
+  if(!m||!Object.hasOwn(flows,m.mode))return false;
+  mode=m.mode; const n=flows[mode].length;
+  phase=Number.isFinite(s?.phase)?mod(s.phase,n):mod((Number(m.step)||1)-1,n);play=false;
+  return true;
+ }
+ get('.fw-toggle').addEventListener('click',()=>{play=!play;prior=null;render();schedule();save();status(play?'播放中':'已暂停')});
+ root.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
+  if(mode===b.dataset.mode)return;mode=b.dataset.mode;phase=0;play=false;build();schedule();save();status(mode==='qa'?'质量退回演示':'生产闭环演示');
+ }));
+ disclosure.addEventListener('toggle',()=>{
+  if(!disclosure.open){play=false;prior=null;render();save()}
+  schedule();
+ });
+ document.addEventListener('visibilitychange',()=>{prior=null;schedule()});
+ reduce.addEventListener('change',e=>{if(e.matches){play=false;prior=null;render();schedule()}});
+ window.addEventListener('openai:set_globals',e=>{if(restored(e.detail?.globals?.widgetState)){build();schedule()}});
+ restored(window.openai?.widgetState);build();schedule();
+})();
+</script>
+</section>
+    </details>
   </div>
 </section>
 <section class="mission chapter" id="mission" tabindex="-1" data-title="两种实习岗位" aria-labelledby="mission-title">
