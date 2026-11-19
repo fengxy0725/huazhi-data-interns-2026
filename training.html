@@ -6,9 +6,26 @@
   <meta name="theme-color" content="#eef5fc">
   <meta name="description" content="华智 AI 数据采集岗前培训，按章节学习操作规范，通过互动练习检查理解，并随时查阅现场清单。">
   <script>
-    if (new URLSearchParams(window.location.search).get('embed') === '1') {
+    if (/(?:^|[?&])embed=1(?:&|$)/.test(window.location.search)) {
       document.documentElement.classList.add('training-embedded');
     }
+    (function () {
+      var startupFailed = false;
+      function showStartupMessage() {
+        if (window.huazhiTrainingReady) return;
+        var message = document.getElementById('startup-message');
+        if (message) message.hidden = false;
+      }
+      window.addEventListener('error', function () {
+        if (window.huazhiTrainingReady) return;
+        startupFailed = true;
+        showStartupMessage();
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        if (startupFailed) showStartupMessage();
+        window.setTimeout(showStartupMessage, 15000);
+      });
+    }());
   </script>
   <title>华智 AI · 采集培训学习</title>
   <style>
@@ -54,6 +71,8 @@ progress::-webkit-progress-bar{background:#e4edf8;border-radius:20px}progress::-
 .progress-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:15px;border-top:1px solid #e8eef6;padding-top:9px;font-size:11px;color:#6b7f91}
 .progress-bottom button{background:none;border:0;color:#536c83;padding:6px 0 6px 10px;font-size:12px;min-height:38px}
 .course-notice{border-left:3px solid #78a9da;padding:9px 16px;background:#eaf2fc;font-size:13px;color:#486780;margin-bottom:26px;white-space:pre-line}
+.startup-message{margin:0 0 24px;padding:22px 24px;border:1px solid #dfc396;border-radius:14px;background:#fff8ee;color:#634c2f}
+.startup-message h2{font-size:20px}.startup-message p{margin:10px 0 16px;font-size:16px}
 .learning-layout{display:grid;grid-template-columns:242px minmax(0,1fr);gap:30px;align-items:start}
 .course-sidebar{position:sticky;top:110px}
 .sidebar-label{display:flex;align-items:center;justify-content:space-between;margin:4px 6px 13px;font-size:12px;letter-spacing:1px;color:#6b8095}
@@ -193,6 +212,7 @@ progress::-webkit-progress-bar{background:#e4edf8;border-radius:20px}progress::-
 </style>
   
   
+  
 </head>
 <body>
   <a class="skip-link" href="#workspace">跳到学习内容</a>
@@ -224,21 +244,109 @@ progress::-webkit-progress-bar{background:#e4edf8;border-radius:20px}progress::-
       </div>
       <section class="progress-card" aria-labelledby="progress-title">
         <div class="progress-label"><h2 id="progress-title">你的学习进度</h2><span id="progress-percent">0%</span></div>
-        <p class="progress-number"><strong id="completed-count">0</strong><span> / <span id="module-count">6</span> 章完成</span></p>
-        <progress id="course-progress" value="0" max="6" aria-label="已完成章节">0%</progress>
+        <p class="progress-number"><strong id="completed-count">0</strong><span> / <span id="module-count">8</span> 章完成</span></p>
+        <progress id="course-progress" value="0" max="8" aria-label="已完成章节">0%</progress>
         <p class="progress-help">确认已读，并答对本章全部练习后完成。</p>
         <div class="progress-bottom"><span id="storage-note">进度保存在当前浏览器</span><button type="button" id="reset-progress">清除进度</button></div>
       </section>
     </section>
 
     <p id="course-notice" class="course-notice" hidden></p>
+    <section id="startup-message" class="startup-message" role="alert" hidden>
+      <h2>课程暂未加载完成</h2>
+      <p>请重新加载一次。若仍没有课程内容，可从微信右上角菜单选择在系统浏览器中打开。</p>
+      <button type="button" class="button" onclick="window.location.reload()">重新加载课程</button>
+    </section>
     <div id="workspace" tabindex="-1">
-      <div class="empty-state"><p class="eyebrow">准备开始</p><h2>正在读取课程内容</h2><p>请将课程数据文件与网页放在同一目录。</p></div>
+      <div class="empty-state"><p class="eyebrow">准备开始</p><h2>正在读取课程内容</h2><p>课程加载完成后，可选择章节并开始练习。</p></div>
     </div>
     <noscript><p class="empty-state">请启用 JavaScript，以便切换章节、完成练习和保存学习进度。</p></noscript>
   </main>
   <footer class="site-footer"><span>华智 AI · 具身智能数据采集</span><span>按规范操作，让每次示范都有价值。</span></footer>
   <p id="app-status" class="sr-only" role="status" aria-live="polite"></p>
+<script>
+/* Local compatibility helpers for older mobile browser engines. */
+(function () {
+  'use strict';
+
+  function install(prototype, name, implementation) {
+    if (!prototype[name]) {
+      Object.defineProperty(prototype, name, {
+        configurable: true,
+        writable: true,
+        value: implementation
+      });
+    }
+  }
+
+  function collectNodes(target, values) {
+    var owner = target.ownerDocument || document;
+    var fragment = owner.createDocumentFragment();
+    for (var index = 0; index < values.length; index += 1) {
+      var value = values[index];
+      // nodeType also accepts nodes from another same-origin frame.
+      var child = value && typeof value.nodeType === 'number'
+        ? value : owner.createTextNode(String(value));
+      fragment.appendChild(child);
+    }
+    return fragment;
+  }
+
+  if (window.Element) {
+    install(window.Element.prototype, 'append', function () {
+      this.appendChild(collectNodes(this, arguments));
+    });
+
+    install(window.Element.prototype, 'replaceChildren', function () {
+      // Collect first so an existing child supplied again is preserved.
+      var replacement = collectNodes(this, arguments);
+      while (this.firstChild) this.removeChild(this.firstChild);
+      this.appendChild(replacement);
+    });
+  }
+
+  if (window.NodeList) {
+    install(window.NodeList.prototype, 'forEach', function (callback, thisArg) {
+      Array.prototype.forEach.call(this, callback, thisArg);
+    });
+  }
+
+  function toLength(value) {
+    var number = Number(value);
+    if (number !== number || number <= 0) return 0;
+    return Math.min(Math.floor(number), 9007199254740991);
+  }
+
+  install(String.prototype, 'padStart', function (targetLength, padString) {
+    if (this === null || this === undefined) throw new TypeError('padStart requires a string');
+    var text = String(this);
+    var needed = toLength(targetLength) - text.length;
+    if (needed <= 0) return text;
+    var padding = padString === undefined ? ' ' : String(padString);
+    if (!padding) return text;
+    while (padding.length < needed) padding += padding;
+    return padding.slice(0, needed) + text;
+  });
+
+  install(Array.prototype, 'includes', function (searchElement, fromIndex) {
+    if (this === null || this === undefined) throw new TypeError('includes requires an array');
+    var values = Object(this);
+    var length = toLength(values.length);
+    if (!length) return false;
+    var start = Number(fromIndex) || 0;
+    start = start < 0 ? Math.ceil(start) : Math.floor(start);
+    if (start >= length) return false;
+    var index = start < 0 ? Math.max(length + start, 0) : start;
+    while (index < length) {
+      var current = values[index];
+      if (current === searchElement || (current !== current && searchElement !== searchElement)) return true;
+      index += 1;
+    }
+    return false;
+  });
+})();
+
+</script>
 <script>
 // Course rules and answers are grounded in the document body, excluding its comments.
 window.TRAINING_DATA = {
@@ -456,32 +564,30 @@ window.TRAINING_DATA = {
       if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer >= question.options.length) return false;
       questionIds.add(question.id);
       return true;
-    }).map(question => ({
-      ...question,
+    }).map(question => Object.assign({}, question, {
       key: JSON.stringify([module.id, question.id]),
       moduleId: module.id,
       signature: fingerprint([question.prompt, question.options, question.answer, question.explanation])
     }));
-    return {
-      ...module,
+    return Object.assign({}, module, {
       cards: list(module.cards),
       checklist: list(module.checklist),
       pitfalls: list(module.pitfalls),
       questions,
       signature: fingerprint([module.title, module.summary, module.cards, module.checklist, module.pitfalls])
-    };
+    });
   });
-  const questions = modules.flatMap(module => module.questions);
+  const questions = modules.reduce((all, module) => all.concat(module.questions), []);
   const questionByKey = new Map(questions.map(question => [question.key, question]));
-  currentModuleId = modules[0]?.id || '';
+  currentModuleId = modules.length ? modules[0].id : '';
 
   function loadProgress() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-      if (saved?.version !== 1 || !saved.learned || !saved.answers) return emptyProgress();
+      if (!saved || saved.version !== 1 || !saved.learned || !saved.answers) return emptyProgress();
       if (typeof saved.learned !== 'object' || typeof saved.answers !== 'object') return emptyProgress();
       return saved;
-    } catch {
+    } catch (error) {
       storageAvailable = false;
       return emptyProgress();
     }
@@ -491,7 +597,7 @@ window.TRAINING_DATA = {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
       storageAvailable = true;
-    } catch {
+    } catch (error) {
       storageAvailable = false;
     }
     updateProgress();
@@ -519,7 +625,7 @@ window.TRAINING_DATA = {
 
   function answerFor(question) {
     const saved = progress.answers[question.key];
-    if (saved?.signature !== question.signature) return undefined;
+    if (!saved || saved.signature !== question.signature) return undefined;
     return Number.isInteger(saved.choice) && saved.choice >= 0 && saved.choice < question.options.length
       ? saved.choice : undefined;
   }
@@ -915,7 +1021,7 @@ window.TRAINING_DATA = {
     try {
       localStorage.removeItem(STORAGE_KEY);
       storageAvailable = true;
-    } catch {
+    } catch (error) {
       storageAvailable = false;
     }
     render();
@@ -933,6 +1039,9 @@ window.TRAINING_DATA = {
     notice.hidden = false;
   }
   render();
+  window.huazhiTrainingReady = true;
+  const startupMessage = document.getElementById('startup-message');
+  if (startupMessage) startupMessage.hidden = true;
 })();
 
 </script>
