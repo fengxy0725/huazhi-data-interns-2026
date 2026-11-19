@@ -64,10 +64,36 @@
 @container(max-width:620px){#hz-datawheel .fw-header{display:block;margin-bottom:18px}#hz-datawheel .fw-modes{margin-top:15px}#hz-datawheel .fw-below{grid-template-columns:minmax(0,1fr);gap:10px}#hz-datawheel .fw-wheelbox{padding:6px}#hz-datawheel .fw-wrap{padding:18px 12px}#hz-datawheel .fw-detail h4{font-size:24px}#hz-datawheel .fw-sub,#hz-datawheel .fw-action{font-size:14px}#hz-datawheel .fw-foot{gap:4px}#hz-datawheel .fw-lab .stage{font-size:19px}#hz-datawheel .fw-lab .idx{font-size:14px}#hz-datawheel .fw-lab .owner{font-size:14px}#hz-datawheel .fw-owner{font-size:15px}}
 @media(pointer:coarse){#hz-datawheel .fw-toggle,#hz-datawheel .fw-modes button,#hz-datawheel .fw-nav button{min-height:44px}}
 </style>
+<style>
+/* Recruitment learning module */
+#learning{scroll-margin-top:100px;background:linear-gradient(135deg,#f3f9ff,#edf5ff);padding:72px 0;color:#162b45}
+#learning .learning-card{background:#fff;border:1px solid #d9e6f1;border-radius:24px;padding:clamp(24px,4vw,46px)}
+#learning .learning-heading{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:24px}
+#learning h2{font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 14px;letter-spacing:-1px}
+#learning .learning-copy{font-size:16px;line-height:1.85;color:#536c85;margin:0;max-width:660px}
+#learning .learning-stats{display:flex;gap:26px;flex:none;color:#235e99}
+#learning .learning-stats span{display:grid;gap:5px;font-size:13px;white-space:nowrap}
+#learning .learning-stats strong{font:600 42px/1 Arial,sans-serif;color:#267bf5}
+#learning .learning-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:10px;padding:0;margin:26px 0}
+#learning .learning-topics li{background:#f3f8fe;border:1px solid #e3edf7;border-radius:10px;padding:12px 14px;font-size:14px;color:#315776}
+#learning .learning-topics b{color:#6396c2;margin-right:8px;font-size:12px}
+#learning .learning-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:0 0 20px;font-size:14px;color:#536c85}
+#learning .learning-full{color:#1766d5;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+#learning .learning-full:hover{text-decoration:underline}
+#learning .learning-embed{border:1px solid #c9dced;border-radius:14px;padding:0;overflow:hidden;background:#f6faff}
+#learning .learning-embed>summary{padding:17px 22px;list-style:none;cursor:pointer;font-size:16px;font-weight:600;color:#185eab;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:58px}
+#learning .learning-embed>summary::-webkit-details-marker{display:none}
+#learning .learning-embed>summary:after{content:'＋';font-size:24px;font-weight:400}
+#learning .learning-embed[open]>summary{border-bottom:1px solid #c9dced}
+#learning .learning-embed[open]>summary:after{content:'−'}
+#learning .learning-embed iframe{display:block;border:0;width:100%;height:820px;background:#f3f8fd}
+#learning a:focus-visible,#learning summary:focus-visible{outline:3px solid #267bf5;outline-offset:3px}
+@media(max-width:650px){#learning{padding:46px 0;scroll-margin-top:80px}#learning .learning-heading{align-items:flex-start;flex-direction:column;gap:22px}#learning .learning-stats{gap:34px}#learning .learning-stats span{display:flex;align-items:baseline;gap:8px}#learning .learning-stats strong{font-size:30px}#learning .learning-topics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#learning .learning-topics li{padding:10px;font-size:12px}#learning .learning-copy{font-size:14px}#learning .learning-embed>summary{font-size:14px;padding:15px}#learning .learning-embed iframe{height:78svh;min-height:590px}#learning .learning-card{padding:22px 18px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#about">跳到主要内容</a>
-<header class="site-header"><a class="brand" href="#home" aria-label="华智 AI 首页"><img src="logo.webp" alt="HUAZHI AI 华智"><span>2026 · 实习生招募</span></a><nav aria-label="主导航"><a href="#journey">认识数采</a><a href="#growth">成长路线</a><a href="#lab">动手试试</a><a href="#team">在华智</a></nav><div class="header-actions"><button class="present-button" id="present-toggle" aria-label="现场演示" aria-pressed="false"><span aria-hidden="true">⛶</span> <span class="present-label">现场演示</span></button><button class="button small" data-apply>加入我们 <span aria-hidden="true">↗</span></button></div></header>
+<header class="site-header"><a class="brand" href="#home" aria-label="华智 AI 首页"><img src="logo.webp" alt="HUAZHI AI 华智"><span>2026 · 实习生招募</span></a><nav aria-label="主导航"><a href="#journey">认识数采</a><a href="#growth">成长路线</a><a href="#lab">动手试试</a><a href="#learning">在线学习</a><a href="#team">在华智</a></nav><div class="header-actions"><button class="present-button" id="present-toggle" aria-label="现场演示" aria-pressed="false"><span aria-hidden="true">⛶</span> <span class="present-label">现场演示</span></button><button class="button small" data-apply>加入我们 <span aria-hidden="true">↗</span></button></div></header>
 <main>
 <section id="home" class="hero chapter" tabindex="-1" data-title="AI 成长的养料">
 <div class="hero-art" role="img" aria-label="奔向未来城市的机器人"></div>
@@ -436,6 +462,14 @@
 <section class="lab section chapter" tabindex="-1" id="lab" data-title="体验质量判断"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">03 / YOUR FIRST DATA CHALLENGE</p><h2>如果你是质检员，<br><span class="gradient-text">这一条，能通过吗？</span></h2></div><p>30 秒小体验，感受数据质量的判断方式。<br>仅为互动示例，不是招聘测评。</p></div>
 <div class="challenge"><div class="challenge-scene"><div class="scene-top"><span><i class="live-dot"></i> DEMO / 取放任务</span><span id="question-progress">01 / 03</span></div><svg class="demo-svg" data-sample="occluded" viewBox="0 0 560 300" role="img" aria-label="抓取杯子并放入目标区域的示意图"><defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#b5d8fa" stroke-width="1"/></pattern><linearGradient id="cupGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#67c9ff"/><stop offset="1" stop-color="#287bf4"/></linearGradient></defs><rect width="560" height="300" fill="url(#grid)"/><path d="M25 240H535" stroke="#72a4d8" stroke-width="2"/><rect x="345" y="145" width="140" height="95" rx="10" fill="#fff" stroke="#98bff5" stroke-width="2" stroke-dasharray="7 5"/><text x="415" y="198" text-anchor="middle" fill="#7294bb" font-size="14">目标放置区</text><g class="demo-cup"><path d="M122 154H187L180 226Q154 242 129 226Z" fill="url(#cupGradient)"/><path d="M187 168C221 160 221 207 184 206" fill="none" stroke="#368df6" stroke-width="8"/><ellipse cx="155" cy="154" rx="33" ry="9" fill="#9edcff"/><path d="M136 167V211" stroke="#ccefff" stroke-width="4" stroke-linecap="round"/></g><path class="demo-path" d="M220 178C262 100 305 99 340 150" fill="none" stroke="#247df2" stroke-width="2" stroke-dasharray="5 6"/><path d="m330 146 13 10 2-17" fill="none" stroke="#247df2" stroke-width="2"/><g class="recovery-marker" aria-hidden="true"><path d="M275 198 290 225 260 225Z" fill="#f4b653"/><text x="275" y="220" text-anchor="middle" fill="#70400a" font-size="18">!</text><text x="275" y="251" text-anchor="middle" fill="#a16c20" font-size="12">滑落 → 重新抓取</text></g><rect class="occlusion" x="210" y="80" width="150" height="160" rx="10" fill="#1b2c47"/><text class="occlusion-label" x="285" y="162" text-anchor="middle" fill="#fff" font-size="14">关键动作被遮挡</text><text x="40" y="277" fill="#7796b5" font-size="11" letter-spacing="2">HUMAN DEMONSTRATION · ILLUSTRATION</text></svg><p class="sample-phase" aria-live="polite">抓取 → 遮挡 → 放置</p><div class="scene-description"><span id="sample-tag">样本 A</span><p id="sample-description"></p></div></div><div class="challenge-answer"><p class="micro-label">训练用途：学习成功完成取放任务</p><h3 id="question-title"></h3><p id="question-hint"></p><div class="answer-buttons"><button class="answer" data-answer="yes"><span aria-hidden="true">✓</span> 可作为成功示范</button><button class="answer" data-answer="no"><span aria-hidden="true">↻</span> 需要补采或分类处理</button></div><div id="quiz-feedback" class="quiz-feedback" aria-live="polite" hidden></div><button id="next-question" class="button" hidden>下一个样本 <span aria-hidden="true">→</span></button></div></div>
 </div></section>
+
+<section class="section chapter" id="learning" tabindex="-1" data-title="数采员在线学习" aria-labelledby="learning-title">
+<div class="wrap"><div class="learning-card">
+<div class="learning-heading"><div><p class="eyebrow">LEARN / PRACTICE / CHECK</p><h2 id="learning-title">数采员在线学习</h2><p class="learning-copy">先学要求，再动手采集。跟着图文示范理解操作规范，做练习、看解析，开录前逐项自查。</p></div><div class="learning-stats"><span><strong>8</strong>个学习章节</span><span><strong>24</strong>道互动练习</span></div></div>
+<ol class="learning-topics"><li><b>01</b>设备与穿戴</li><li><b>02</b>原地操作</li><li><b>03</b>视角与试拍</li><li><b>04</b>单条录制</li><li><b>05</b>任务设计</li><li><b>06</b>配置与上传</li><li><b>07</b>任务多样性</li><li><b>08</b>特征值与异常处理</li></ol>
+<div class="learning-links"><a class="learning-full" href="training.html">打开完整学习页 ↗</a><span>适用 RoboPocket（RP）采集任务 · 进度自动保存在当前浏览器</span></div>
+<details class="learning-embed"><summary>在本页开始学习</summary><iframe data-training-src="training.html?embed=1" title="数采员在线学习课程" loading="lazy"></iframe></details>
+</div></div></section>
 <section class="team section chapter" tabindex="-1" id="team" data-title="认识华智团队"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">04 / BUILD IT TOGETHER</p><h2>在真实项目里实践，<br>和<span class="gradient-text">一群伙伴</span>一起成长。</h2></div><p>华智（无锡）人工智能科技有限公司<br>具身数据 · 具身模型 · 具身应用</p></div><div class="company-compass"><div class="company-intro"><p class="eyebrow">SCENE FIRST</p><h3>场景为王。<br>让真实经验，驱动持续进化。</h3><p>从真实场景需求出发，连接数据、模型与应用。<br>你参与的数据工作，是这条链路的起点。</p></div><div class="company-loop"><div><span>01 / DATA</span><h4>具身数据</h4><p>多源采集、处理审核与资产治理</p></div><div><span>02 / MODEL</span><h4>具身模型</h4><p>WAM-inT 工业装配具身模型</p></div><div><span>03 / APPLICATION</span><h4>具身应用</h4><p>在真实工位验证效果，反馈回流</p></div><p class="loop-caption">数据驱动应用 <span aria-hidden="true">⇄</span> 应用反哺数据</p></div></div>
 <section class="intern-stories" id="intern-sharing" aria-labelledby="intern-sharing-title">
   <header class="stories-heading">
@@ -491,11 +525,21 @@
 <footer class="wrap"><a class="brand footer-brand" href="#home"><img src="logo.webp" alt="华智 AI"></a><p>让每一次采集，都有价值。</p><span>2026 CAMPUS RECRUITMENT</span></footer>
 <dialog id="apply-dialog" aria-labelledby="apply-title"><button class="dialog-close" aria-label="关闭报名窗口">×</button><p class="eyebrow">YOUR NEXT MOVE</p><h2 id="apply-title">下一站，华智 AI。</h2><p>实习生招募意向登记表</p><div class="apply-options"><img class="apply-qr" src="apply-qr.png" alt="扫码打开华智 AI 实习生招募意向登记表"><p class="scan-note">现场可扫码报名；已在手机上打开，可点下方按钮直接填写。</p><a id="apply-form-link" class="button" href="#" target="_blank" rel="noopener noreferrer" hidden>填写意向登记 ↗</a></div><p class="fineprint">扫码或打开链接后，由你在原登记表中提交信息。</p></dialog>
 <dialog id="share-dialog" aria-labelledby="share-title"><button class="dialog-close" id="share-close" aria-label="关闭网页二维码">×</button><p class="eyebrow">SCAN TO EXPLORE</p><h2 id="share-title">扫码，认识这份实习。</h2><p>华智 AI · 数采实习生招募</p><img class="apply-qr" data-site-qr alt="网页访问二维码"><p class="scan-note">扫码在手机浏览完整介绍</p><button class="button" id="copy-site-link">复制网页链接 ↗</button></dialog><div class="present-controls" hidden><button id="chapter-prev" aria-label="上一节">←</button><span id="chapter-label">01 / 09</span><button id="chapter-next" aria-label="下一节">→</button><button id="present-exit" aria-label="退出演示">退出 ⛶</button></div><div class="toast" role="status" hidden></div>
-<nav class="mobile-dock" aria-label="手机快捷导航"><a href="#journey">认识数采</a><a href="#growth">成长路线</a><a href="#lab">动手试试</a><button data-apply>登记意向 <span aria-hidden="true">↗</span></button></nav>
+<nav class="mobile-dock" aria-label="手机快捷导航"><a href="#journey">认识数采</a><a href="#learning">在线学习</a><a href="#lab">动手试试</a><button data-apply>登记意向 <span aria-hidden="true">↗</span></button></nav>
 <dialog id="strategy-viewer" aria-labelledby="strategy-viewer-title">
   <div class="strategy-viewer-bar"><h2 id="strategy-viewer-title">公司战略图</h2><form method="dialog"><button type="submit" aria-label="关闭公司战略图" autofocus>关闭</button></form></div>
   <div class="strategy-viewer-image" tabindex="0" role="region" aria-label="公司战略图大图，可横向滚动"><img src="company-strategy.png" width="926" height="452" loading="lazy" alt="数据与应用双轮驱动的具身智能自进化闭环。"></div>
 </dialog>
 <script src="content.js?v=20261030-clean-copy"></script><script src="qrcode.js"></script><script src="app.js?v=20261101-content-controls"></script><script src="enhancements.js?v=20261101-content-controls"></script>
 <script src="video-player.js?v=20261102-videos"></script>
+
+<script>
+(() => {
+ const panel = document.querySelector('#learning .learning-embed');
+ const frame = panel.querySelector('iframe');
+ panel.addEventListener('toggle', () => {
+   if (panel.open && !frame.getAttribute('src')) frame.src = frame.dataset.trainingSrc;
+ });
+})();
+</script>
 </body></html>

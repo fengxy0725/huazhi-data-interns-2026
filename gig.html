@@ -36,15 +36,49 @@
 @media(max-width:700px){.recruiter-grid{grid-template-columns:1fr}.recruiter-heading{display:block}.contact .recruiter-heading p{margin-top:10px}.recruiter-card{justify-content:center}.recruiter-card h4{font-size:23px}.recruiter-card img{width:164px;height:164px}}
 @media(max-width:370px){.recruiter-card{padding:16px 12px;gap:12px}.recruiter-card img{width:144px;height:144px}.recruiter-card h4{font-size:21px}.recruiter-link{font-size:13px}}
 </style>
+<style>
+/* Recruitment learning module */
+#learning{scroll-margin-top:100px;background:linear-gradient(135deg,#f3f9ff,#edf5ff);padding:72px 0;color:#162b45}
+#learning .learning-card{background:#fff;border:1px solid #d9e6f1;border-radius:24px;padding:clamp(24px,4vw,46px)}
+#learning .learning-heading{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:24px}
+#learning h2{font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 14px;letter-spacing:-1px}
+#learning .learning-copy{font-size:16px;line-height:1.85;color:#536c85;margin:0;max-width:660px}
+#learning .learning-stats{display:flex;gap:26px;flex:none;color:#235e99}
+#learning .learning-stats span{display:grid;gap:5px;font-size:13px;white-space:nowrap}
+#learning .learning-stats strong{font:600 42px/1 Arial,sans-serif;color:#267bf5}
+#learning .learning-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:10px;padding:0;margin:26px 0}
+#learning .learning-topics li{background:#f3f8fe;border:1px solid #e3edf7;border-radius:10px;padding:12px 14px;font-size:14px;color:#315776}
+#learning .learning-topics b{color:#6396c2;margin-right:8px;font-size:12px}
+#learning .learning-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:0 0 20px;font-size:14px;color:#536c85}
+#learning .learning-full{color:#1766d5;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+#learning .learning-full:hover{text-decoration:underline}
+#learning .learning-embed{border:1px solid #c9dced;border-radius:14px;padding:0;overflow:hidden;background:#f6faff}
+#learning .learning-embed>summary{padding:17px 22px;list-style:none;cursor:pointer;font-size:16px;font-weight:600;color:#185eab;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:58px}
+#learning .learning-embed>summary::-webkit-details-marker{display:none}
+#learning .learning-embed>summary:after{content:'＋';font-size:24px;font-weight:400}
+#learning .learning-embed[open]>summary{border-bottom:1px solid #c9dced}
+#learning .learning-embed[open]>summary:after{content:'−'}
+#learning .learning-embed iframe{display:block;border:0;width:100%;height:820px;background:#f3f8fd}
+#learning a:focus-visible,#learning summary:focus-visible{outline:3px solid #267bf5;outline-offset:3px}
+@media(max-width:650px){#learning{padding:46px 0;scroll-margin-top:80px}#learning .learning-heading{align-items:flex-start;flex-direction:column;gap:22px}#learning .learning-stats{gap:34px}#learning .learning-stats span{display:flex;align-items:baseline;gap:8px}#learning .learning-stats strong{font-size:30px}#learning .learning-topics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#learning .learning-topics li{padding:10px;font-size:12px}#learning .learning-copy{font-size:14px}#learning .learning-embed>summary{font-size:14px;padding:15px}#learning .learning-embed iframe{height:78svh;min-height:590px}#learning .learning-card{padding:22px 18px}}
+</style>
 </head>
 <body>
 <a class="skip" href="#work">跳到工作介绍</a>
-<header class="top"><div class="wrap"><a class="brand" href="#home" aria-label="华智 AI 零工招募首页"><img src="logo.webp" alt="华智 AI"><span>零工招募</span></a><nav aria-label="主导航"><a href="#work">工作内容</a><a href="#about">认识团队</a><a href="#start">如何上岗</a><a class="button small" href="#apply">报名登记 ↗</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="#home" aria-label="华智 AI 零工招募首页"><img src="logo.webp" alt="华智 AI"><span>零工招募</span></a><nav aria-label="主导航"><a href="#work">工作内容</a><a href="#about">认识团队</a><a href="#start">如何上岗</a><a href="#learning">在线学习</a><a class="button small" href="#apply">报名登记 ↗</a></nav></div></header>
 <main>
 <section class="hero" id="home"><div class="wrap"><div class="hero-grid"><div><p class="status">华智 AI · 具身智能数据采集</p><h1>来动手，<br>让机器人<span>学会行动。</span></h1><p class="hero-copy">数据采集员零工招募。<br>跟着任务示范，用设备记录真实操作，<br>把一次认真完成的动作，变成 AI 学习的素材。</p><div class="actions"><a class="button" href="#apply">我想报名 ↗</a><a class="button light" href="#work">看看怎么做 ↓</a></div></div><div class="hero-photo"><img src="practice.webp" width="900" height="650" alt="华智 AI 团队现场交流与培训"><div class="caption"><b>从看懂任务，到完成一次采集。</b><span>华智 AI 真实培训现场</span></div></div></div><div class="facts"><div><small>工作方向</small><strong>具身智能 · 数据采集</strong></div><div><small>公司位置</small><strong>无锡 · 长三角工业芯谷</strong></div><div><small>计薪方式</small><strong>质检有效时长计薪</strong></div></div></div></section>
 <section class="section" id="work"><div class="wrap"><header class="heading"><div><p class="eyebrow">01 / YOUR WORK</p><h2>这份零工，具体做什么？</h2></div><p>按任务卡操作，记录清楚关键过程。<br>你认真完成的每一步，都关系到数据质量。</p></header><div class="work-grid"><div><div class="work-intro"><h3>数据采集员</h3><p>围绕抓取、取放、插接等动作，完成真人示范与数据记录。</p></div><ol class="steps"><li><b>01</b><div><strong>听懂任务，做好准备</strong><p>确认动作要求，学习设备操作，检查工位和取景。</p></div></li><li><b>02</b><div><strong>按标准做，完整记录</strong><p>按任务卡完成操作，让双手、物品和关键动作清晰可见。</p></div></li><li><b>03</b><div><strong>回看自查，按反馈补采</strong><p>核对记录是否完整，遇到异常及时反馈，按要求整改或补采。</p></div></li></ol><div class="requirements"><span>认真细致</span><span>愿意学设备</span><span>按约定到岗</span><span>能配合反馈</span></div></div><div><figure class="demo" style="margin:0"><video controls controlslist="nodownload" playsinline preload="none" poster="action-demo-v2-cover.webp" aria-label="数据采集动作示例"><source src="action-demo-v2.mp4" type="video/mp4">浏览器暂不支持视频播放。</video><figcaption><h3>先看一段现场动作</h3><p>约 56 秒 · 工位操作、方块取放与毛巾折叠。实际任务以项目安排为准。</p></figcaption></figure><div class="quiz"><h3>30 秒了解一个质量要求</h3><p>物品放对了，但抓取过程被手臂挡住。可以直接提交为合格示范吗？</p><div class="quiz-buttons"><button type="button" data-answer="yes" aria-pressed="false">结果对了就可以</button><button type="button" data-answer="no" aria-pressed="false">先检查关键过程</button></div><p id="quiz-result" role="status" aria-live="polite">点击试试，你会怎么判断？</p></div></div></div></div></section>
 <section class="section about" id="about"><div class="wrap"><header class="heading"><div><p class="eyebrow">02 / OUR TEAM</p><h2>我们是谁？<br>华智 AI 具身数据科学部</h2></div></header><p class="intro"><strong>华智（无锡）人工智能科技有限公司</strong>是无锡数据集团布局人工智能业务的关键承载平台，也是无锡（华为云）人工智能创新中心的运营主体。具身数据科学部把人的操作示范转化为机器人可以学习的数据，让<strong>任务、采集、质检和训练反馈</strong>持续衔接。</p><div class="flywheel"><div class="orbit-panel"><div class="orbit"><svg viewBox="0 0 440 440" role="img" aria-labelledby="gig-wheel-title gig-wheel-desc"><title id="gig-wheel-title">数据生产飞轮</title><desc id="gig-wheel-desc">任务定义、招募培训、执行采集、预检质检、复验放行、训练评测，六个环节持续迭代。可通过右侧或下方按钮查看各环节。</desc><defs><linearGradient id="gig-core" x2="1" y2="1"><stop stop-color="#1d68d4"/><stop offset="1" stop-color="#29a6c4"/></linearGradient></defs><circle class="orbit-guide" cx="220" cy="220" r="154"/><circle class="orbit-track" cx="220" cy="220" r="154"/><g id="orbit-arrows" fill="#72acd8"><path d="M210 64l11 -6v12z"/><path d="M230 376l-11 6v-12z"/></g><circle cx="220" cy="220" r="88" fill="#e6f2fd"/><circle cx="220" cy="220" r="76" fill="url(#gig-core)"/><g text-anchor="middle" fill="white" font-family="inherit"><text x="220" y="199" font-size="10" letter-spacing="1.5" opacity=".8">HUMAN → ROBOT</text><text x="220" y="231" font-size="25" font-weight="700">数据飞轮</text><text x="220" y="253" font-size="11" opacity=".85">一次示范 · 持续迭代</text></g><g class="orbit-node" data-node="0"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">01</text><text class="node-title" y="10">任务定义</text></g><g class="orbit-node" data-node="1"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">02</text><text class="node-title" y="10">招募培训</text></g><g class="orbit-node active" data-node="2"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">03</text><text class="node-title" y="10">执行采集</text></g><g class="orbit-node" data-node="3"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">04</text><text class="node-title" y="10">预检质检</text></g><g class="orbit-node" data-node="4"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">05</text><text class="node-title" y="10">复验放行</text></g><g class="orbit-node" data-node="5"><rect x="-57" y="-26" width="114" height="52" rx="14"/><text class="node-number" y="-9">06</text><text class="node-title" y="10">训练评测</text></g></svg></div><div class="orbit-controls"><span>六个环节 · 持续循环</span><button type="button" class="orbit-toggle" id="orbit-toggle" aria-pressed="false">暂停转动</button></div><p class="orbit-hint">点击环节，暂停查看具体分工</p></div><div class="fly-detail"><div class="flow-nav" role="group" aria-label="查看数据飞轮各环节"><button type="button" data-flow="0" aria-pressed="false">任务定义</button><button type="button" data-flow="1" aria-pressed="false">招募培训</button><button type="button" data-flow="2" aria-pressed="true">执行采集</button><button type="button" data-flow="3" aria-pressed="false">预检质检</button><button type="button" data-flow="4" aria-pressed="false">复验放行</button><button type="button" data-flow="5" aria-pressed="false">训练评测</button></div><div class="flow-reading"><p class="flow-index" id="flow-index">03 / 06 · 你参与的环节</p><h3 id="flow-title">执行采集 · 把动作记录到位</h3><p id="flow-copy">数采员检查工位，按任务卡完成采集并自查，标明操作结果，提交可追溯的记录。</p><div class="next" id="flow-next">下一站 → 数采运营预检，再交由质检人员判断。</div></div></div></div><div class="support"><span><b>培训团队</b>示范、带练与上岗确认</span><span><b>运营团队</b>排班、任务沟通与问题跟进</span><span><b>质检团队</b>独立检查、复验与质量反馈</span></div></div></section>
-<section class="section" id="start"><div class="wrap"><header class="heading"><div><p class="eyebrow">03 / GET STARTED</p><h2>从第一次联系，到开始采集。</h2></div></header><div class="onboard"><article><b>STEP 01</b><h3>填写报名登记</h3><p>提交意向信息，联系团队沟通可到岗日期和时段。</p></article><article><b>STEP 02</b><h3>确认接单安排</h3><p>确认工作地点、任务要求与计酬方式。</p></article><article><b>STEP 03</b><h3>学习与试做</h3><p>按安排熟悉设备和任务，完成试做及上岗确认。</p></article><article><b>STEP 04</b><h3>按任务采集</h3><p>按确认的班次到岗，完成采集、自查与问题反馈。</p></article></div><div class="checklist"><div><h3>按质检有效时长计薪。</h3><p>采集后，经质检确认的有效时长作为计薪依据。具体单价、有效时长认定及到岗安排，在接单前沟通确认。</p></div><ul><li>本次任务与工作地点</li><li>具体单价与有效时长认定</li><li>到岗日期与工作时段</li><li>培训、试做与质量要求</li></ul></div></div></section>
+<section class="section" id="start"><div class="wrap"><header class="heading"><div><p class="eyebrow">03 / GET STARTED</p><h2>从第一次联系，到开始采集。</h2></div></header><div class="onboard"><article><b>STEP 01</b><h3>填写报名登记</h3><p>提交意向信息，联系团队沟通可到岗日期和时段。</p></article><article><b>STEP 02</b><h3>确认接单安排</h3><p>确认工作地点、任务要求与计酬方式。</p></article><article><b>STEP 03</b><h3>学习与试做</h3><p>按安排熟悉设备和任务，完成试做及上岗确认。</p><a href="#learning" style="color:#1766d5;font-weight:600;display:inline-block;padding-top:10px">进入在线学习 →</a></article><article><b>STEP 04</b><h3>按任务采集</h3><p>按确认的班次到岗，完成采集、自查与问题反馈。</p></article></div><div class="checklist"><div><h3>按质检有效时长计薪。</h3><p>采集后，经质检确认的有效时长作为计薪依据。具体单价、有效时长认定及到岗安排，在接单前沟通确认。</p></div><ul><li>本次任务与工作地点</li><li>具体单价与有效时长认定</li><li>到岗日期与工作时段</li><li>培训、试做与质量要求</li></ul></div></div></section>
+
+<section class="section chapter" id="learning" tabindex="-1" data-title="数采员在线学习" aria-labelledby="learning-title">
+<div class="wrap"><div class="learning-card">
+<div class="learning-heading"><div><p class="eyebrow">LEARN / PRACTICE / CHECK</p><h2 id="learning-title">数采员在线学习</h2><p class="learning-copy">先学要求，再动手采集。跟着图文示范理解操作规范，做练习、看解析，开录前逐项自查。</p></div><div class="learning-stats"><span><strong>8</strong>个学习章节</span><span><strong>24</strong>道互动练习</span></div></div>
+<ol class="learning-topics"><li><b>01</b>设备与穿戴</li><li><b>02</b>原地操作</li><li><b>03</b>视角与试拍</li><li><b>04</b>单条录制</li><li><b>05</b>任务设计</li><li><b>06</b>配置与上传</li><li><b>07</b>任务多样性</li><li><b>08</b>特征值与异常处理</li></ol>
+<div class="learning-links"><a class="learning-full" href="training.html">打开完整学习页 ↗</a><span>适用 RoboPocket（RP）采集任务 · 进度自动保存在当前浏览器</span></div>
+<details class="learning-embed"><summary>在本页开始学习</summary><iframe data-training-src="training.html?embed=1" title="数采员在线学习课程" loading="lazy"></iframe></details>
+</div></div></section>
 <section class="contact" id="contact">
  <div class="wrap">
   <div class="contact-layout" id="apply">
@@ -70,7 +104,7 @@
  </div>
 </section>
 <section class="faq wrap"><h2>你可能还想知道</h2><details><summary>没做过数据采集，可以先了解吗？</summary><p>可以先联系招聘团队了解任务。上岗前按安排学习设备和操作要求，完成试做及岗位确认。</p></details><details><summary>这份零工怎么计薪？</summary><p>按采集后经质检确认的有效时长计薪。具体单价与有效时长认定标准，在接单前与招聘团队确认。</p></details><details><summary>可以选什么时间，能做多久？</summary><p>联系时告知可到岗日期和时段，由团队结合当前任务与班次沟通安排。</p></details><details><summary>数据采完以后会去哪里？</summary><p>数据先经过预检、质检与复验放行，验收后的数据版本进入训练和评测。评测发现的能力缺口会用于确定下一轮任务与补采要求。</p></details></section>
-</main><footer class="footer wrap"><span>华智（无锡）人工智能科技有限公司 · 具身数据科学部</span><span>HUAZHI AI · Run Beyond. Grasp the World.</span></footer><div class="sticky-cta"><span>华智 AI · 零工招募<small>先沟通任务与接单安排</small></span><a class="button small" href="https://huazhi-ai.feishu.cn/share/base/form/shrcn6uNwrJgcrR6C1XHFjZkgQg?share_link_type=qrcode&amp;ccm_open_type=form_v1_qrcode_share" target="_blank" rel="noopener noreferrer">报名登记 ↗</a></div>
+</main><footer class="footer wrap"><span>华智（无锡）人工智能科技有限公司 · 具身数据科学部</span><span>HUAZHI AI · Run Beyond. Grasp the World.</span></footer><div class="sticky-cta"><a href="#learning" style="color:#175c9c;font-weight:600">在线学习<small>8 章课程 · 24 道练习</small></a><a class="button small" href="https://huazhi-ai.feishu.cn/share/base/form/shrcn6uNwrJgcrR6C1XHFjZkgQg?share_link_type=qrcode&amp;ccm_open_type=form_v1_qrcode_share" target="_blank" rel="noopener noreferrer">报名登记 ↗</a></div>
 <script>
 const flows = [
  ['01 / 06 · 从需求出发','任务定义 · 明确采什么','把模型能力缺口拆解成任务、场景和验收要求，形成清晰的任务卡。','下一站 → 培训师按任务要求准备人员。'],
@@ -133,5 +167,15 @@ document.querySelectorAll('[data-answer]').forEach(button => {
   document.getElementById('quiz-result').textContent = correct ? '对！关键动作也要清楚可见。按任务标准检查，必要时调整取景后补采。' : '再看一下过程。结果完成了，关键动作仍需要清楚可见，才能按标准判断是否合格。';
  });
 });
+</script>
+
+<script>
+(() => {
+ const panel = document.querySelector('#learning .learning-embed');
+ const frame = panel.querySelector('iframe');
+ panel.addEventListener('toggle', () => {
+   if (panel.open && !frame.getAttribute('src')) frame.src = frame.dataset.trainingSrc;
+ });
+})();
 </script>
 </body></html>
